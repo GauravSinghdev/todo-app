@@ -3,7 +3,7 @@
 
   
 
-This project contains a simpple Todo Application (Still in progress)
+This project contains a simpple Todo Application (Still need more progress in it)
 
   
 
