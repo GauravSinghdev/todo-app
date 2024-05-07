@@ -8,7 +8,7 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
 
 app.use(express.json()); //this will make sure all post end points will work will be able to parse the json body
 
