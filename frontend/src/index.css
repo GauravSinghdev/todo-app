@@ -6,3 +6,7 @@ body{
   background: radial-gradient(circle, #5b377c, #00821c);
 }
 
+*:focus {
+  outline: none;
+}
+

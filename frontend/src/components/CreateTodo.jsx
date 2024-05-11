@@ -14,7 +14,7 @@ const CreateTodo = () => {
                     setTitle(value);
                 }}/>
                 <br />
-            <input className="rounded h-12 px-3 focus:shadow-lg  focus:shadow-red-500 text-2xl border-none focus:border-none" type="text" placeholder="Description" 
+            <input className="rounded h-12 px-3 focus:shadow-lg  focus:shadow-red-500 text-2xl border-none focus:border-none focus:outline-none;" type="text" placeholder="Description" 
                 onChange={(e) => {
                     const value = e.target.value;
                     setDescription(value);
