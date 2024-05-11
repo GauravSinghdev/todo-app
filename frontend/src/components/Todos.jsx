@@ -29,11 +29,11 @@ const Todos = ({todos}) => {
         <div>
             {todos.map((todo)=>{
                 return <div className="text-center border-[10px] mx-[600px] mb-[20px] border-gray-400 rounded-lg hover:border-green-500">
-                    <p className="text-2xl font-medium mb-2 mt-2">
-                        <span className="font-semibold">Title: </span>
+                    <p className="text-xl font-medium mb-2 mt-2">
+                        <span className="font-bold text-2xl">Title: </span>
                         {todo.title}</p>
-                    <p className="text-1xl font-medium">
-                        <span className="font-2xl font-semibold">Description: </span>                        
+                    <p className="text-xl font-medium">
+                        <span className="text-2xl font-bold">Description: </span>                        
                     {todo.description}</p>
                     <button 
                     onClick={() => handleTodoCompletion(todo._id)}

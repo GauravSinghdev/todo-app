@@ -27,9 +27,9 @@ function App() {
   
   return (
     <>
-      <h1 className='text-center my-2 pb-4 text-5xl font-bold font-cursive shadow-sm ms-44'>Todo App
+      <h1  className='text-center my-2 pb-4 text-5xl font-bold font-cursive shadow-sm ms-40'>Todo App
       
-      <a href='https://github.com/GauravSinghdev/todo-app-MERN-Stack-App' target='_blank' className='float-right pr-20 active:text-white hover:text-white'><SiGithub/></a>
+      <a href='https://github.com/GauravSinghdev/todo-app-MERN-Stack-App' target='_blank' className='float-right pr-20 hover:text-white'><SiGithub/></a>
       </h1>
 
       
