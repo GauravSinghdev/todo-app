@@ -6,14 +6,14 @@ const CreateTodo = () => {
     const [description, setDescription] = useState("");
     return (
 
-        <div className="grid grid-cols-1 mx-96  mt-10 items-center">
-            <input className="border-2 border-black rounded h-12 px-2 focus:shadow-lg  focus:shadow-red-500 text-xl" type="text" placeholder="title"
+        <div className="grid grid-cols-1 mx-[600px]  mt-10 items-center">
+            <input className="border-2 border-black rounded h-12 px-3 focus:shadow-lg  focus:shadow-red-500 text-xl border-none focus:border-none" type="text" placeholder="title"
             required 
                 onChange={(e) => {
                     const value = e.target.value;
                     setTitle(value);
                 }}/><br />
-            <input className="border-2 border-black rounded h-12 px-2 focus:shadow-lg  focus:shadow-red-500 text-xl" type="text" placeholder="description" 
+            <input className="rounded h-12 px-3 focus:shadow-lg  focus:shadow-red-500 text-xl border-none focus:border-none" type="text" placeholder="description" 
                 onChange={(e) => {
                     const value = e.target.value;
                     setDescription(value);

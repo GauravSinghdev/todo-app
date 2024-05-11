@@ -47,28 +47,62 @@ app.get("/todos", async function(req,res){
 })
 
 //create put endpoint for marking a specific todo completed
-app.put("/completed", async function(req,res){
-    const updatePayload = req.body;
-    const parsedPayload = updateTodo.safeParse(updatePayload);
 
-    if(!parsedPayload.success){
-        res.status(411).json({
-            msg: "You sent the wrong inputs",
-        })
-        return;
+// app.put("/completed", async function(req,res){
+//     const updatePayload = req.body.id;
+//     const parsedPayload = updateTodo.safeParse(updatePayload);
+
+//     if(!parsedPayload.success){
+//         res.status(411).json({
+//             msg: "You sent the wrong inputs",
+//         })
+//         return;
+//     }
+
+//     //update it in mongodb
+//     await todo.findByIdAndUpdate(
+//         updatePayload.$oid,
+//         {
+//         completed: true //mark todo update
+//     })
+
+//     res.json({
+//         msg: "Todo marked as completed"
+//     })
+// })
+
+
+app.put('/todos/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const updatedTodo = await todo.findByIdAndUpdate(id, { completed: true });
+
+        if (!updatedTodo) {
+            return res.status(404).send('Todo not found');
+        }
+
+        return res.json(updatedTodo);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send('Internal Server Error');
     }
+});
 
-    //update it in mongodb
-    await todo.update({
-        _id: req.body.id //what id todo you want  to update,
-    },{
-        completed: true //mark todo update
-    })
 
-    res.json({
-        msg: "Todo marked as completed"
-    })
-})
+app.delete('/todos/:id', async (req, res) => {
+    try {
+        const id = req.params.id;
+        const deletedTodo = await todo.findByIdAndDelete(id);
 
+        if (!deletedTodo) {
+            return res.status(404).send('Todo not found');
+        }
+
+        return res.json({ message: 'Todo deleted successfully' });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send('Internal Server Error');
+    }
+});
 
 app.listen(3000);
