@@ -29,7 +29,8 @@ function App() {
       <h1 className='text-center my-2 pb-4 text-5xl font-bold font-cursive shadow-sm'>Todo App</h1>
       <div>
         <CreateTodo></CreateTodo>
-
+        <hr />
+        <br />
         <Todos todos={todos}></Todos>
       </div>
     </>
