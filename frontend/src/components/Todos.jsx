@@ -28,7 +28,7 @@ const Todos = ({todos}) => {
     return (
         <div>
             {todos.map((todo)=>{
-                return <div className="text-center border-[10px] mx-[600px] mb-[20px] border-gray-400 rounded-lg">
+                return <div className="text-center border-[10px] mx-[600px] mb-[20px] border-gray-400 rounded-lg hover:border-green-500">
                     <p className="text-2xl font-medium mb-2 mt-2">
                         <span className="font-semibold">Title: </span>
                         {todo.title}</p>
