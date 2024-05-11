@@ -6,12 +6,3 @@ body{
   background: radial-gradient(circle, #5b377c, #00821c);
 }
 
-@keyframes pulse {
-  0% {
-      transform: scale(1);
-  }
-  100% {
-      transform: scale(1.05);
-  }
-}
-
