@@ -11,7 +11,7 @@ const Todos = ({todos}) => {
     
       const handleTodoCompletion = async (id) => {
         try {
-          await axios.put(`http://localhost:3000/todos/${id}`);
+          await axios.put(`https://todo-app-bell.onrender.com/todos/${id}`);
         } catch (error) {
           console.error('Error marking todo as completed:', error);
         }
