@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect(process.env.MONGODB_URI);
 
 const todoSchema = mongoose.Schema({
     title: String,

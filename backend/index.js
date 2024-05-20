@@ -75,13 +75,35 @@ app.get("/todos", async function(req,res){
 app.put('/todos/:id', async (req, res) => {
     try {
         const id = req.params.id;
-        const updatedTodo = await todo.findByIdAndUpdate(id, { completed: true });
+
+        const t = await todo.findById(id);
+
+        const completedStatus = t.completed;
+
+        if(completedStatus == false)
+        {
+            const updatedTodo = await todo.findByIdAndUpdate(id, { completed: true });
+        }
+
+        else{
+            const updatedTodo = await todo.findByIdAndUpdate(id, { completed: false });
+        }
+        
 
         if (!updatedTodo) {
             return res.status(404).send('Todo not found');
         }
 
-        return res.json(updatedTodo);
+        // const todo = await todo.findById(id);
+
+        // if (todo) {
+        // const newCompletedStatus = !todo.completed; // Toggle the completed status
+        // const updatedTodo = await Todo.findByIdAndUpdate(id, { completed: newCompletedStatus }, { new: true });
+        // console.log(updatedTodo);
+        // } else {
+        // console.log("Todo item not found.");
+        // }
+        // return res.json(updatedTodo);
     } catch (error) {
         console.error(error);
         return res.status(500).send('Internal Server Error');
